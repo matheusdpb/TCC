@@ -21,6 +21,7 @@
     <link href="vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
     <!-- Estilo -->
     <link rel="stylesheet" href="css/sb-admin-2.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body id="page-top">
@@ -32,7 +33,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
               <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Scratch Analytics</div>
           </a>
           <!-- Divisor -->
           <hr class="sidebar-divider my-0">   
@@ -55,13 +56,33 @@
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
               <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-              <!-- <label  for="upload" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Importar Projeto</label>     -->
-              <button id="upload">Upload file</button>       
+              <button id="importBtn" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Importar Projeto</button> 
             </div>  
           </div>
         </div>
       </div>
+      
     </div>
+    
+    <!-- Modal -->
+    <div id="myModal" class="my-modal">
+        <div class="my-modal-content">
+          <form action="">
+            <div class="modal-header modal-title">
+              <h3>Importe</h3>
+            </div>
+            <div class="modal-content">
+              <input type="text" id='nome-projeto' placeholder="Nome">
+              <button id="upload" type="button">Upload file</button>
+            </div>
+            <div class="modal-footer">
+              <button id="closeBtn" class="btn btn-secondary" type="button" data-dismiss="modal">Fechar</button>
+              <button id="saveBtn" class="btn btn-primary" type="button">Salvar</button>
+            </div>
+          </form>
+      </div>
+    </div>
+
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
   </body>

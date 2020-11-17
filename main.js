@@ -21,9 +21,6 @@ app.on('ready', function() {
 
     mainWindow.loadFile('index.html')
     mainWindow.on('closed', function() {
-        // Dereference the window object, usually you would store windows
-        // in an array if your app supports multi windows, this is the time
-        // when you should delete the corresponding element.
         mainWindow = null;
     });
 });
@@ -45,13 +42,9 @@ ipc.on('open-file-dialog-for-file', function (event) {
         event.sender.send('selected-file', data.filePaths);
      });
    } else {
-      //  }, function (files) {
-      //      if (files) event.sender.send('selected-file', files[0]);
-      //  });
       dialog.showOpenDialog({
         properties: ['openFile','openDirectory']
      }).then((data) => {
-        // console.log(data.filePaths);
         event.sender.send('selected-file', data.filePaths);
      });
    }});
