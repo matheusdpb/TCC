@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "lokijs": "^1.5.11",
+    "read-file-utf8": "^2.0.4",
     "unzipper": "^0.10.11"
   }
 }
