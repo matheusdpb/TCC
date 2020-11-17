@@ -5,9 +5,6 @@
 // selectively enable features needed in the rendering
 // process.
 
-var loki = require('lokijs');
-var db = new loki('db.json');
-var projetos = db.addCollection('projetos');
 const ipc = require('electron').ipcRenderer;
 const buttonCreated = document.getElementById('upload');
 
@@ -50,16 +47,9 @@ function closeModal(){
     showPackageJsonVersion();
 }
 
-saveBtn.addEventListener('click', saveProject);
-function saveProject(){
-    var projeto = require('C:\\Users\\mathe\\Desktop\\project.json');
-    var nomeProjeto = document.querySelector('#nome-projeto').value;
-    let data = {
-        nomeProjeto,
-        projeto
-    }
-    projetos.insert(data);
-    db.save();
+saveBtn.addEventListener('click', save);
+function save(){
+    saveProject();
     modal.style.display = 'none';
 }
 
